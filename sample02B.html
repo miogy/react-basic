@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>함수로 변경하기</title>
+</head>
+<body>
+    <div id="root"> </div>
+
+
+<!-- react사이트에서 CDN link 복사 -->
+<script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+<script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+
+<!-- babel 가져오기 -->
+<!-- JSX코드가 들어가면 babel이 꼭 필요함 -->
+<!-- data.json이나 data.js등 데이터를 가져와서 작업할시에는 없어도 됨 -->
+<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+<!-- 사용할 스크립트 -->
+
+<script type="text/babel"> 
+
+// 객체속성이용하기 mes라는 객체를 props로 받음
+function Com(props){
+    return (
+        <div>
+            {props.mes}
+            </div>
+    )
+}
+
+// defaultProps사용시 객체형으로 만들어야함
+Com.defaultProps = {
+    mes : 'welcome'
+}
+const root = document.querySelector('#root');
+// 내보내기
+ReactDOM.render(
+    <Com />,
+    root
+)
+</script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>class 객체속성 이용하기</title>
+</head>
+<body>
+    <div id="root"> </div>
+
+
+<!-- react사이트에서 CDN link 복사 -->
+<script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+<script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+
+<!-- babel 가져오기 -->
+<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+<!-- 사용할 스크립트 -->
+
+<script type="text/babel"> 
+
+// 객체속성이용하기 class는 항상 this가 들어감 {this.props.속성명}
+class Com extends React.Component{
+    render(){
+        return(
+            <div>
+                {this.props.meg}
+                </div>
+        )
+    }
+
+}
+// 내보내기
+ReactDOM.render(
+    <Com meg="welcome!!!"/>,
+    // 필요한 속성을 meg에 넣어준다.
+    document.querySelector('#root')
+)
+</script>
+</body>
+</html>
